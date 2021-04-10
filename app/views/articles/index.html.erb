@@ -1,17 +1,7 @@
 <h1 class="row justify-content-center">Articles listing page</h1>
 
 <div class="container">
-  <% @articles.each do |article| %> 
-<div class="row justify-content-center" >
-  <div class="card bg-light mb-3" style="max-width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><%=link_to article.title, article%></h5>
-    <p class="card-text"><%=article.description%> </p>
-  </div>
-  </div>
-</div>
- 
-    <% end %>
+  <%= render @articles %>
 </div>
 
 
