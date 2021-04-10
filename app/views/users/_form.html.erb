@@ -1,0 +1,25 @@
+<%= render 'shared/errors', obj: @user %>
+
+<%= form_with(model: @user, local: true) do |f| %>
+
+<div class="form-group">
+  <%= f.label :username %><br/>
+  <%= f.text_field :username, class: "form-control" %>
+</div>
+
+<div class="form-group">
+  <%= f.label :email %><br/>
+  <%= f.email_field :email, class: "form-control" %>
+</div>
+
+<div class="form-group">
+  <%= f.label :password %><br/>
+  <%= f.password_field :password, class: "form-control" %>
+</div>
+
+
+<div class="form-group">
+  <%= f.submit(@user.new_record? ? "Sign up" : "Update account", class: "btn btn-primary") %>
+</div>
+
+<% end %>
