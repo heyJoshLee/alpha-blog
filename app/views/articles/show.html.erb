@@ -1,9 +1,11 @@
 <h1><%=@article.title%></h1>
 <p><%=@article.description%></p>
-<p>by <%=@article.user.username%></p>
+<p>by <%= link_to @article.user.username, @article.user%></p>
 
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you sure" } %> |
+<% if logged_in? && @article.user == current_user %>
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+  <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you sure" } %> |
+<% end %>
 <%= link_to 'Return to articles listing', articles_path %>
 

@@ -1,7 +1,9 @@
 <h1 class="row justify-content-center">Articles listing page</h1>
 
+
 <div class="container">
-  <%= render @articles %>
+<%= will_paginate @articles, list_classes: %w(pagination justify-content-center), previous_label: "Previous", next_label: "Next" %>  
+<%= render @articles %>
 </div>
 
 
