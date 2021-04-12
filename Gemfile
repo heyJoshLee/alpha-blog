@@ -31,6 +31,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'will_paginate', '~> 3.2.1'
 gem 'will_paginate-bootstrap4'
 
+gem 'rexml', require: false
+
 group :development, :test do
   gem "sqlite3"
 

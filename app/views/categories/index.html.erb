@@ -1,0 +1,10 @@
+<h1 class="text-center">Categories</h1>
+<%= will_paginate @articles, list_classes: %w(pagination justify-content-center), previous_label: "Previous", next_label: "Next" %>  
+
+<ul>
+
+  <% @categories.each do |category| %>
+    <li><%=link_to category.name, category%></li>
+
+  <% end %>
+</ul>
