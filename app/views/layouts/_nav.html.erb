@@ -27,6 +27,10 @@
         <li class="nav-item">
           <%= link_to "Delete profile", user_path(current_user), method: :delete, class: "nav-link text-danger", data: { confirm:  "Are you sure?"} %>
         </li>
+        </li>
+        <li class="nav-item">
+          <%= link_to "New article", new_article_path, class: "nav-link"%>
+        </li>
       <% end %>
     </ul>
     <form class="form-inline my-2 my-lg-0">

@@ -1,6 +1,12 @@
 <h1><%=@article.title%></h1>
 <p><%=@article.description%></p>
 <p>by <%= link_to @article.user.username, @article.user%></p>
+<% if @article.categories.any? %>
+  <% @article.categories.each do |category| %>
+    <%= link_to category.name, category, class: "badge badge-pill badge-info" %> 
+  <% end %>
+<% end %>
+<br />
 
 
 <% if logged_in? && @article.user == current_user %>
